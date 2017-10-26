@@ -1,7 +1,9 @@
-package com.example.user.androidmvpexample;
+package com.example.user.androidmvpexample.view.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.user.androidmvpexample.R;
 
 public class MainActivity extends AppCompatActivity {
 
