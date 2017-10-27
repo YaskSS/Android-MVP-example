@@ -42,14 +42,13 @@ public class UsersModel {
         clearUsersTask.execute();
     }
 
-    interface LoadUserCallback {
+    public interface LoadUserCallback {
         void onLoad(List<User> users);
     }
 
-    interface CompleteCallback {
+    public interface CompleteCallback {
         void onComplete();
     }
-
 
     class LoadUsersTask extends AsyncTask<Void, Void, List<User>> {
 
