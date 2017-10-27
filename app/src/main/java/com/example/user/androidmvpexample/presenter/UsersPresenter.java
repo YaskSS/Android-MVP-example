@@ -3,6 +3,7 @@ package com.example.user.androidmvpexample.presenter;
 import android.content.ContentValues;
 import android.text.TextUtils;
 
+import com.example.user.androidmvpexample.R;
 import com.example.user.androidmvpexample.User;
 import com.example.user.androidmvpexample.data.UsersData;
 import com.example.user.androidmvpexample.database.UserTable;
@@ -38,11 +39,11 @@ public class UsersPresenter {
         loadUsers();
     }
 
-    public void loadUsers(){
-        model.loadsUsers(new UsersModel.LoadUserCallback() {
+    public void loadUsers() {
+        model.loadUsers(new UsersModel.LoadUserCallback() {
             @Override
             public void onLoad(List<User> users) {
-                view.showToast(R.string.empty_values);
+                view.showUsers(users);
             }
         });
     }

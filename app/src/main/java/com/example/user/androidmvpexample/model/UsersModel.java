@@ -3,6 +3,7 @@ package com.example.user.androidmvpexample.model;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.example.user.androidmvpexample.User;
 import com.example.user.androidmvpexample.database.DbHelper;
@@ -25,7 +26,7 @@ public class UsersModel {
     }
 
     //получение списка пользователей из БД
-    public void loadsUsers(LoadUserCallback loadUserCallback) {
+    public void loadUsers(LoadUserCallback loadUserCallback) {
         LoadUsersTask loadUsersTask = new LoadUsersTask(loadUserCallback);
         loadUsersTask.execute();
     }
@@ -66,7 +67,9 @@ public class UsersModel {
                 User user = new User();
                 user.setId(cursor.getLong(cursor.getColumnIndex(UserTable.COLUMN.ID)));
                 user.setName(cursor.getString(cursor.getColumnIndex(UserTable.COLUMN.NAME)));
+                user.setAge(Integer.parseInt(cursor.getString(cursor.getColumnIndex(UserTable.COLUMN.EMAIL))));
                 users.add(user);
+                Log.i("TESTT ", String.valueOf(user.getAge()));
             }
             cursor.close();
             return users;
