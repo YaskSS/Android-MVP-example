@@ -8,12 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by User on 26.10.2017.
  */
 
-public class DdHelper extends SQLiteOpenHelper {
+public class DbHelper extends SQLiteOpenHelper {
 
     public static final String NAME = "mvp";
     public static final int VERSION = 1;
 
-    public DdHelper(Context context) {
+    public DbHelper(Context context) {
         super(context, NAME, null, VERSION);
     }
 
